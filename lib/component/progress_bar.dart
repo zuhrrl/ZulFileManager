@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:zul_file_manager/constant/app_constant.dart';
 
 class ProgressBar extends StatelessWidget {
-  const ProgressBar({Key? key}) : super(key: key);
+  final Color progressbarColor;
+  const ProgressBar({Key? key, required this.progressbarColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var widthProgress = MediaQuery.of(context).size.width - 85;
+
     return Stack(
       children: [
         Container(
           height: 5,
-          width: 295,
-          margin: EdgeInsets.only(left: 15, top: 6),
+          width: widthProgress,
+          margin: EdgeInsets.only(left: 15, top: 6, right: 15),
           padding: EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
               color: backgroundProgressColor,
@@ -23,7 +27,8 @@ class ProgressBar extends StatelessWidget {
             margin: EdgeInsets.only(left: 15, top: 5),
             padding: EdgeInsets.only(right: 15),
             decoration: BoxDecoration(
-                color: Colors.blue, borderRadius: BorderRadius.circular(15)))
+                color: progressbarColor,
+                borderRadius: BorderRadius.circular(15)))
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:zul_file_manager/component/card_favorite.dart';
 import 'package:zul_file_manager/component/card_recent_document.dart';
 import 'package:zul_file_manager/component/card_recent_images.dart';
@@ -16,6 +17,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var itemRecents = [
+    {
+      'filename': 'proyek_akhir_test_test.dart',
+      'format_and_size': 'dart: 120kb'
+    }
+  ];
   getBodyWidget() {
     return ListView(
       shrinkWrap: true,
@@ -80,7 +87,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         ItemStorageStatistics(
-            assets: 'assets/icon/user.png', backgroundIconColor: Colors.blue),
+          titleItem: 'Images',
+          assets: 'assets/icon/user.png',
+          backgroundIconColor: Colors.blue,
+          totalFiles: '5 files',
+          totalSize: '10,5 MB',
+          progressBarColor: Colors.blue,
+        ),
         TitleText(title: 'Favorites'),
         SizedBox(
             height: favoriteCardHeight,
@@ -97,7 +110,20 @@ class _HomeScreenState extends State<HomeScreen> {
         TitleText(title: 'Recent Images'),
         CardRecentImage(),
         TitleText(title: 'Recent Documents'),
-        CardRecentDocument(),
+        CardRecentDocument(
+          callbackAdd: () {
+            var now = DateTime.now();
+            var tanggal = DateFormat('dd/MM/yyyy HH:mm:ss').format(now);
+
+            setState(() {
+              itemRecents.insert(0, {
+                'filename': 'proyek_akhir_tanggal: ${tanggal}.dart',
+                'format_and_size': 'dart: 120kb'
+              });
+            });
+          },
+          itemsRecents: itemRecents,
+        ),
         SizedBox(
           height: 10,
         )
@@ -111,7 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: bodyColor,
       body: SafeArea(child: getBodyWidget()),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => StorageScreen()));
+          return;
+        },
         child: Container(
           decoration: BoxDecoration(
             color: Colors.transparent,
@@ -128,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           child: Icon(
-            Icons.add,
+            Icons.storage,
             color: Colors.white,
           ),
         ),

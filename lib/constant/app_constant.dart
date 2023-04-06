@@ -17,3 +17,4 @@ const hintColor = Color(0xff9da4bf);
 const backgroundProgressColor = Color(0xffedf0fa);
 const orangeColor = Color(0xffdc8920);
 const redColor = Color(0xffed625e);
+const cyanColor = Color(0xff6a4fed);

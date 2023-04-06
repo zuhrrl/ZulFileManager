@@ -5,8 +5,18 @@ import 'package:zul_file_manager/constant/app_constant.dart';
 class ItemStorageStatistics extends StatelessWidget {
   final String assets;
   final Color backgroundIconColor;
+  final String totalFiles;
+  final String totalSize;
+  final String titleItem;
+  final Color progressBarColor;
   const ItemStorageStatistics(
-      {Key? key, required this.assets, required this.backgroundIconColor})
+      {Key? key,
+      required this.titleItem,
+      required this.assets,
+      required this.backgroundIconColor,
+      required this.totalFiles,
+      required this.totalSize,
+      required this.progressBarColor})
       : super(key: key);
 
   @override
@@ -20,7 +30,7 @@ class ItemStorageStatistics extends StatelessWidget {
             width: circleFavoriteCardIcon,
             height: circleFavoriteCardIcon,
             decoration: BoxDecoration(
-                color: backgroundIconColor.withOpacity(0.8),
+                color: backgroundIconColor.withOpacity(0.7),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -31,7 +41,7 @@ class ItemStorageStatistics extends StatelessWidget {
                   )
                 ]),
             child: Padding(
-              padding: EdgeInsets.all(7),
+              padding: EdgeInsets.all(8),
               child: Image.asset(
                 assets,
                 height: 10,
@@ -46,7 +56,7 @@ class ItemStorageStatistics extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 15),
                 child: Text(
-                  'Images',
+                  titleItem,
                   style: TextStyle(
                       color: textColor,
                       fontSize: 15,
@@ -58,7 +68,7 @@ class ItemStorageStatistics extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 15),
                     child: Text(
-                      '1.2 GB',
+                      totalSize,
                       style: TextStyle(
                           color: textColor,
                           fontSize: 14,
@@ -66,10 +76,10 @@ class ItemStorageStatistics extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 182,
+                    width: MediaQuery.of(context).size.width - 175,
                   ),
                   Text(
-                    '12,847 files',
+                    totalFiles,
                     style: TextStyle(
                         color: textColor,
                         fontSize: 14,
@@ -77,7 +87,9 @@ class ItemStorageStatistics extends StatelessWidget {
                   )
                 ],
               ),
-              ProgressBar()
+              ProgressBar(
+                progressbarColor: progressBarColor,
+              )
             ],
           )
         ],
