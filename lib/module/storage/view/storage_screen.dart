@@ -5,15 +5,9 @@ import 'package:zul_file_manager/component/title_text.dart';
 import 'package:zul_file_manager/component/top_menu.dart';
 import 'package:zul_file_manager/constant/app_constant.dart';
 
-class StorageScreen extends StatefulWidget {
-  StorageScreen({Key? key}) : super(key: key);
+class StorageScreen extends StatelessWidget {
+  const StorageScreen({Key? key}) : super(key: key);
 
-  @override
-  State<StorageScreen> createState() => _StorageScreenState();
-}
-
-class _StorageScreenState extends State<StorageScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
