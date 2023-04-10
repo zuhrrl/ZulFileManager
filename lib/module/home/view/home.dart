@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var itemRecents = [
+  final itemRecents = [
     {
       'filename': 'proyek_akhir_test_test.dart',
       'format_and_size': 'dart: 120kb'

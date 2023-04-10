@@ -6,13 +6,10 @@ class CardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 5),
-      width: 165,
-      height: 150.0,
-      decoration: BoxDecoration(
-        image: DecorationImage(fit: BoxFit.cover, image: AssetImage(assets)),
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+    return Flexible(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.asset(assets),
       ),
     );
   }

@@ -115,11 +115,14 @@ class StorageScreen extends StatelessWidget {
             totalSize: '17,5 MB',
             progressBarColor: redColor,
           ),
+          const SizedBox(
+            height: 10,
+          ),
           const ItemStorageStatistics(
             titleItem: 'Videos',
             assets: 'assets/icon/icon_play_video.png',
             backgroundIconColor: cyanColor,
-            totalFiles: '17 files',
+            totalFiles: '17,284 files',
             totalSize: '21,5 MB',
             progressBarColor: cyanColor,
           ),

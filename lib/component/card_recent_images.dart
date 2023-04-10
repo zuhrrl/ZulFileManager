@@ -64,6 +64,7 @@ class CardRecentImage extends StatelessWidget {
               CardImage(
                 assets: 'assets/image/flowers.png',
               ),
+              SizedBox(width: 5),
               CardImage(
                 assets: 'assets/image/flowers.png',
               )

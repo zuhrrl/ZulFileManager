@@ -21,79 +21,69 @@ class ItemStorageStatistics extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 15, top: 10),
-      child: Row(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(left: 15),
-            width: circleFavoriteCardIcon,
-            height: circleFavoriteCardIcon,
-            decoration: BoxDecoration(
-                color: backgroundIconColor.withOpacity(0.7),
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0, 3),
-                    color: shadowColor.withOpacity(0.3),
-                    spreadRadius: 3,
-                    blurRadius: 5,
-                  )
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Image.asset(
-                assets,
-                height: 10,
-                width: 10,
-              ),
+    return Row(
+      // mainAxisSize: MainAxisSize.max,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(left: 15),
+          width: circleFavoriteCardIcon,
+          height: circleFavoriteCardIcon,
+          decoration: BoxDecoration(
+              color: backgroundIconColor.withOpacity(0.7),
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  offset: const Offset(0, 3),
+                  color: shadowColor.withOpacity(0.3),
+                  spreadRadius: 3,
+                  blurRadius: 5,
+                )
+              ]),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Image.asset(
+              assets,
+              height: 10,
+              width: 10,
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  titleItem,
-                  style: const TextStyle(
-                      color: textColor,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
+        ),
+        Flexible(
+            child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Text(
+                    totalSize,
+                    style: const TextStyle(
+                        color: textColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300),
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      totalSize,
-                      style: const TextStyle(
-                          color: textColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width - 175,
-                  ),
-                  Text(
+                const Spacer(
+                  flex: 3,
+                ),
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: Text(
                     totalFiles,
                     style: const TextStyle(
                         color: textColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w300),
-                  )
-                ],
-              ),
-              ProgressBar(
-                progressbarColor: progressBarColor,
-              )
-            ],
-          )
-        ],
-      ),
+                  ),
+                ))
+              ],
+            ),
+            ProgressBar(progressbarColor: progressBarColor)
+          ],
+        ))
+      ],
     );
   }
 }
