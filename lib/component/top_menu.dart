@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zul_file_manager/constant/app_constant.dart';
 
 class TopMenu extends StatelessWidget {
   final Widget iconLeft;
@@ -18,12 +17,13 @@ class TopMenu extends StatelessWidget {
       children: [
         IconButton(
             onPressed: () {
-              return callback();
+              callback();
+              return;
             },
             icon: iconLeft),
-        Spacer(),
+        const Spacer(),
         Padding(
-          padding: EdgeInsets.only(right: 15, top: 15),
+          padding: const EdgeInsets.only(right: 15, top: 15),
           child: iconRight,
         )
       ],

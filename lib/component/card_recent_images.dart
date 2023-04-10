@@ -8,15 +8,15 @@ class CardRecentImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
       width: 400,
       decoration: BoxDecoration(
           color: cardFavoriteColor,
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           boxShadow: [
             BoxShadow(
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
               color: shadowColor.withOpacity(0.3),
               spreadRadius: 3,
               blurRadius: 5,
@@ -25,7 +25,7 @@ class CardRecentImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             '2 Images',
             style: TextStyle(
               color: textColor,
@@ -33,7 +33,7 @@ class CardRecentImage extends StatelessWidget {
             ),
           ),
           Row(
-            children: [
+            children: const [
               Text(
                 'Local',
                 style: TextStyle(color: textColor, fontSize: 16),
@@ -56,11 +56,11 @@ class CardRecentImage extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
-            children: [
+            children: const [
               CardImage(
                 assets: 'assets/image/flowers.png',
               ),

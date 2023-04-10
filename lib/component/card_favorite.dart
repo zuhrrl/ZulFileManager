@@ -11,14 +11,14 @@ class FavoriteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10, left: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
       width: favoriteCardWidth,
       decoration: BoxDecoration(
           color: cardFavoriteColor,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
           boxShadow: [
             BoxShadow(
-              offset: Offset(4, 0),
+              offset: const Offset(4, 0),
               color: shadowColor.withOpacity(0.3),
               spreadRadius: 3,
               blurRadius: 5,
@@ -31,7 +31,7 @@ class FavoriteCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 15, top: 20),
+                margin: const EdgeInsets.only(left: 15, top: 20),
                 width: circleFavoriteCardIcon,
                 height: circleFavoriteCardIcon,
                 decoration: BoxDecoration(
@@ -39,14 +39,14 @@ class FavoriteCard extends StatelessWidget {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                         color: shadowColor.withOpacity(0.3),
                         spreadRadius: 3,
                         blurRadius: 5,
                       )
                     ]),
                 child: Padding(
-                  padding: EdgeInsets.all(7),
+                  padding: const EdgeInsets.all(7),
                   child: Image.asset(
                     assets,
                     height: 10,
@@ -56,17 +56,17 @@ class FavoriteCard extends StatelessWidget {
               ),
               IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.more_vert,
                     color: Color(0xff8c8fa5),
                   ))
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
-            padding: EdgeInsets.only(left: 15, bottom: 10),
+            padding: const EdgeInsets.only(left: 15, bottom: 10),
             child: Column(
-              children: [
+              children: const [
                 Text(
                   'Personal',
                   style: TextStyle(fontWeight: FontWeight.bold),

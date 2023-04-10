@@ -20,9 +20,9 @@ class ItemTotalSpace extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(color: hintColor),
+          style: const TextStyle(color: hintColor),
         ),
-        SizedBox(
+        const SizedBox(
           height: 7,
         ),
         Row(
@@ -34,7 +34,7 @@ class ItemTotalSpace extends StatelessWidget {
             ),
             Text(
               description,
-              style: TextStyle(
+              style: const TextStyle(
                   color: textColor, fontSize: 14, fontWeight: FontWeight.bold),
             )
           ],

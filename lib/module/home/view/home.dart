@@ -10,7 +10,7 @@ import 'package:zul_file_manager/constant/app_constant.dart';
 import 'package:zul_file_manager/module/storage/view/storage_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -38,8 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 25,
                   width: 25,
                 )),
-            Spacer(),
-            Padding(
+            const Spacer(),
+            const Padding(
               padding: EdgeInsets.only(right: 15, top: 15),
               child: CircleAvatar(
                 radius: 20,
@@ -51,10 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(left: 15, right: 15, bottom: 10),
+          margin: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'Files',
                 style: TextStyle(fontSize: 25, color: textColor),
@@ -68,25 +68,25 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Row(
           children: [
-            TitleText(title: 'Storage Statistics'),
+            const TitleText(title: 'Storage Statistics'),
             Padding(
-              padding: EdgeInsets.only(top: 5, left: 10),
+              padding: const EdgeInsets.only(top: 5, left: 10),
               child: TextButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => StorageScreen()));
+                            builder: (context) => const StorageScreen()));
                     return;
                   },
-                  child: Text(
+                  child: const Text(
                     'See more',
                     style: TextStyle(color: orangeColor),
                   )),
             )
           ],
         ),
-        ItemStorageStatistics(
+        const ItemStorageStatistics(
           titleItem: 'Images',
           assets: 'assets/icon/user.png',
           backgroundIconColor: Colors.blue,
@@ -94,22 +94,22 @@ class _HomeScreenState extends State<HomeScreen> {
           totalSize: '10,5 MB',
           progressBarColor: Colors.blue,
         ),
-        TitleText(title: 'Favorites'),
+        const TitleText(title: 'Favorites'),
         SizedBox(
             height: favoriteCardHeight,
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: 10,
               scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (context, index) => FavoriteCard(
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) => const FavoriteCard(
                 backgroundIconColor: Colors.blue,
                 assets: 'assets/icon/fileicon.png',
               ),
             )),
-        TitleText(title: 'Recent Images'),
-        CardRecentImage(),
-        TitleText(title: 'Recent Documents'),
+        const TitleText(title: 'Recent Images'),
+        const CardRecentImage(),
+        const TitleText(title: 'Recent Documents'),
         CardRecentDocument(
           callbackAdd: () {
             var now = DateTime.now();
@@ -117,14 +117,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
             setState(() {
               itemRecents.insert(0, {
-                'filename': 'proyek_akhir_tanggal: ${tanggal}.dart',
+                'filename': 'proyek_akhir_tanggal: $tanggal.dart',
                 'format_and_size': 'dart: 120kb'
               });
             });
           },
           itemsRecents: itemRecents,
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         )
       ],
@@ -139,13 +139,13 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => StorageScreen()));
+              MaterialPageRoute(builder: (context) => const StorageScreen()));
           return;
         },
         child: Container(
           decoration: BoxDecoration(
             color: Colors.transparent,
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(100),
             ),
             boxShadow: [
@@ -153,11 +153,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.grey.withOpacity(0.3),
                 spreadRadius: 7,
                 blurRadius: 7,
-                offset: Offset(3, 5),
+                offset: const Offset(3, 5),
               ),
             ],
           ),
-          child: Icon(
+          child: const Icon(
             Icons.storage,
             color: Colors.white,
           ),

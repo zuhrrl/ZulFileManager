@@ -8,10 +8,10 @@ class TitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15, bottom: 10, top: 10),
+      margin: const EdgeInsets.only(left: 15, bottom: 10, top: 10),
       child: Text(
         title,
-        style: TextStyle(fontSize: 20, color: textColor),
+        style: const TextStyle(fontSize: 20, color: textColor),
       ),
     );
   }

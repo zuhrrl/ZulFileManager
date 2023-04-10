@@ -15,8 +15,8 @@ class ProgressBar extends StatelessWidget {
         Container(
           height: 5,
           width: widthProgress,
-          margin: EdgeInsets.only(left: 15, top: 6, right: 15),
-          padding: EdgeInsets.only(right: 15),
+          margin: const EdgeInsets.only(left: 15, top: 6, right: 15),
+          padding: const EdgeInsets.only(right: 15),
           decoration: BoxDecoration(
               color: backgroundProgressColor,
               borderRadius: BorderRadius.circular(15)),
@@ -24,8 +24,8 @@ class ProgressBar extends StatelessWidget {
         Container(
             height: 5,
             width: 180,
-            margin: EdgeInsets.only(left: 15, top: 5),
-            padding: EdgeInsets.only(right: 15),
+            margin: const EdgeInsets.only(left: 15, top: 5),
+            padding: const EdgeInsets.only(right: 15),
             decoration: BoxDecoration(
                 color: progressbarColor,
                 borderRadius: BorderRadius.circular(15)))

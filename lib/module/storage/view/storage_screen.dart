@@ -8,6 +8,7 @@ import 'package:zul_file_manager/constant/app_constant.dart';
 class StorageScreen extends StatelessWidget {
   const StorageScreen({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -15,50 +16,50 @@ class StorageScreen extends StatelessWidget {
         shrinkWrap: true,
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           TopMenu(
             callback: () {
               return Navigator.pop(context);
             },
-            iconLeft: Icon(
+            iconLeft: const Icon(
               Icons.arrow_back,
               color: primaryColor,
               size: 30,
             ),
-            iconRight: Icon(
+            iconRight: const Icon(
               Icons.more_vert,
               color: primaryColor,
               size: 30,
             ),
           ),
-          TitleText(title: 'Storage'),
+          const TitleText(title: 'Storage'),
           Align(
             alignment: Alignment.center,
             child: Container(
               width: 350,
               height: 300,
-              margin: EdgeInsets.only(bottom: 10, top: 10),
+              margin: const EdgeInsets.only(bottom: 10, top: 10),
               decoration: BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(4, 0),
+                      offset: const Offset(4, 0),
                       color: shadowColor.withOpacity(0.3),
                       spreadRadius: 3,
                       blurRadius: 5,
                     )
                   ],
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
+                  borderRadius: const BorderRadius.all(Radius.circular(15))),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Stack(
-                    children: [
+                    children: const [
                       Positioned(
                           top: 78,
                           left: 65,
@@ -77,10 +78,10 @@ class StorageScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       ItemTotalSpace(
                         title: 'Total Space',
                         description: '2 GB',
@@ -96,17 +97,17 @@ class StorageScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   )
                 ],
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          ItemStorageStatistics(
+          const ItemStorageStatistics(
             titleItem: 'Images',
             assets: 'assets/icon/photo.png',
             backgroundIconColor: redColor,
@@ -114,7 +115,7 @@ class StorageScreen extends StatelessWidget {
             totalSize: '17,5 MB',
             progressBarColor: redColor,
           ),
-          ItemStorageStatistics(
+          const ItemStorageStatistics(
             titleItem: 'Videos',
             assets: 'assets/icon/icon_play_video.png',
             backgroundIconColor: cyanColor,

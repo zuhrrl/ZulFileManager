@@ -22,11 +22,11 @@ class ItemStorageStatistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 15, top: 10),
+      margin: const EdgeInsets.only(bottom: 15, top: 10),
       child: Row(
         children: [
           Container(
-            margin: EdgeInsets.only(left: 15),
+            margin: const EdgeInsets.only(left: 15),
             width: circleFavoriteCardIcon,
             height: circleFavoriteCardIcon,
             decoration: BoxDecoration(
@@ -34,14 +34,14 @@ class ItemStorageStatistics extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                     color: shadowColor.withOpacity(0.3),
                     spreadRadius: 3,
                     blurRadius: 5,
                   )
                 ]),
             child: Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Image.asset(
                 assets,
                 height: 10,
@@ -54,10 +54,10 @@ class ItemStorageStatistics extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: Text(
                   titleItem,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: textColor,
                       fontSize: 15,
                       fontWeight: FontWeight.bold),
@@ -66,10 +66,10 @@ class ItemStorageStatistics extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15),
                     child: Text(
                       totalSize,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: textColor,
                           fontSize: 14,
                           fontWeight: FontWeight.w300),
@@ -80,7 +80,7 @@ class ItemStorageStatistics extends StatelessWidget {
                   ),
                   Text(
                     totalFiles,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: textColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w300),

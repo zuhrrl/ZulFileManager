@@ -13,7 +13,7 @@ class ItemRecentDocument extends StatelessWidget {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 0, top: 10),
+          margin: const EdgeInsets.only(left: 0, top: 10),
           width: circleFavoriteCardIcon,
           height: circleFavoriteCardIcon,
           decoration: BoxDecoration(
@@ -21,13 +21,13 @@ class ItemRecentDocument extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                   color: shadowColor.withOpacity(0.3),
                   spreadRadius: 3,
                   blurRadius: 5,
                 )
               ]),
-          child: Icon(
+          child: const Icon(
             Icons.file_copy,
             color: circleIconColor,
             size: iconFavoriteSize,
@@ -35,11 +35,11 @@ class ItemRecentDocument extends StatelessWidget {
         ),
         Flexible(
             child: Container(
-          margin: EdgeInsets.only(left: 15, top: 15),
+          margin: const EdgeInsets.only(left: 15, top: 15),
           child: Text(
             fileName,
             // overflow: TextOverflow.ellipsis,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 15, color: textColor, fontWeight: FontWeight.bold),
           ),
         ))
