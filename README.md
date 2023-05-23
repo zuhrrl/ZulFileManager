@@ -1,4 +1,4 @@
-# zul_file_manager
+# ZulFileManager
 
 A new Flutter project.
 
