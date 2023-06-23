@@ -4,7 +4,7 @@ import 'package:zul_file_manager/component/card_favorite.dart';
 import 'package:zul_file_manager/component/card_recent_document.dart';
 import 'package:zul_file_manager/component/card_recent_images.dart';
 import 'package:zul_file_manager/component/item_storage_statistics.dart';
-import 'package:zul_file_manager/component/search_bar.dart';
+import 'package:zul_file_manager/component/search_bar.dart' as sb;
 import 'package:zul_file_manager/component/title_text.dart';
 import 'package:zul_file_manager/constant/app_constant.dart';
 import 'package:zul_file_manager/module/storage/view/storage_screen.dart';
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 10,
               ),
-              SearchBar(),
+              sb.SearchBar(),
             ],
           ),
         ),
